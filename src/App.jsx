@@ -4,8 +4,6 @@ function App() {
 
   return (
     <>
-      <p className='text-6xl'>king</p>
-      <button className='btn btn-ghost'>okk</button>
     </>
   )
 }
