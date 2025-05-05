@@ -1,0 +1,23 @@
+name: Update AUTHORS and Auto-Merge
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-authors:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Generate AUTHORS file
+        run: |
+          git log --format='%aN <%aE>' | sort -u > AUTHORS
+
+      - name: Commit and push changes
+        run: |
+          git add AUTHORS
+          git commit -m "Update AUTHORS file" || echo "No changes to commit"
+          git push
