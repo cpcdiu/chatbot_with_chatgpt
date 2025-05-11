@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import ChatHistory from "../components/ChatHistory";
+import Home from "../components/Home";
 
 const routes = createBrowserRouter([
     {
@@ -10,6 +11,10 @@ const routes = createBrowserRouter([
             {
                 path: "/chat-history",
                 element: <ChatHistory></ChatHistory>
+            },
+            {
+                path: "/",
+                element: <Home></Home>
             }
         ]
     }
